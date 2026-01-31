@@ -1,0 +1,347 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "server.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "client.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "quantum_state_manager.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "quantum_channel.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "quantum_teleportation.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "quantum_visualizer.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "bb84_protocol.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "DES_Encrypt.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "DES_Decrypt.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "RSA.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "el_gamal.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "requirements.txt",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "README.md",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "MESSAGE_PASSING.md",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "TODO.md",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "templates/index_socketio.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "static/style.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "static/js/socket_main.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "static/js/script.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "static/script.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/kyber.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/dilithium.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/falcon.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/saber.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/classic_mceliece.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/bike.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/hqc.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/newhope.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/frodo.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/ntru_encrypt.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/ntruprime.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/rainbow.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/sphincsplus.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/csidh.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/picnic.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/xmss.py",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "pqc_algorithms/quartz.py",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/app.py"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*\\.css)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*\\.js)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/app.py",
+      "dest": "/app.py"
+    },
+    {
+      "src": "/server.py",
+      "dest": "/server.py"
+    },
+    {
+      "src": "/client.py",
+      "dest": "/client.py"
+    },
+    {
+      "src": "/quantum_state_manager.py",
+      "dest": "/quantum_state_manager.py"
+    },
+    {
+      "src": "/quantum_channel.py",
+      "dest": "/quantum_channel.py"
+    },
+    {
+      "src": "/quantum_teleportation.py",
+      "dest": "/quantum_teleportation.py"
+    },
+    {
+      "src": "/quantum_visualizer.py",
+      "dest": "/quantum_visualizer.py"
+    },
+    {
+      "src": "/bb84_protocol.py",
+      "dest": "/bb84_protocol.py"
+    },
+    {
+      "src": "/DES_Encrypt.py",
+      "dest": "/DES_Encrypt.py"
+    },
+    {
+      "src": "/DES_Decrypt.py",
+      "dest": "/DES_Decrypt.py"
+    },
+    {
+      "src": "/RSA.py",
+      "dest": "/RSA.py"
+    },
+    {
+      "src": "/el_gamal.py",
+      "dest": "/el_gamal.py"
+    },
+    {
+      "src": "/requirements.txt",
+      "dest": "/requirements.txt"
+    },
+    {
+      "src": "/README.md",
+      "dest": "/README.md"
+    },
+    {
+      "src": "/MESSAGE_PASSING.md",
+      "dest": "/MESSAGE_PASSING.md"
+    },
+    {
+      "src": "/TODO.md",
+      "dest": "/TODO.md"
+    },
+    {
+      "src": "/PPT_Documentation.md",
+      "dest": "/PPT_Documentation.md"
+    },
+    {
+      "src": "/Project_Doc.docx",
+      "dest": "/Project_Doc.docx"
+    },
+    {
+      "src": "/GUI.png",
+      "dest": "/GUI.png"
+    },
+    {
+      "src": "/project_overview.png",
+      "dest": "/project_overview.png"
+    },
+    {
+      "src": "/templates/index_socketio.html",
+      "dest": "/templates/index_socketio.html"
+    },
+    {
+      "src": "/static/style.css",
+      "dest": "/static/style.css"
+    },
+    {
+      "src": "/static/js/socket_main.js",
+      "dest": "/static/js/socket_main.js"
+    },
+    {
+      "src": "/static/js/script.js",
+      "dest": "/static/js/script.js"
+    },
+    {
+      "src": "/static/script.js",
+      "dest": "/static/script.js"
+    },
+    {
+      "src": "/pqc_algorithms/kyber.py",
+      "dest": "/pqc_algorithms/kyber.py"
+    },
+    {
+      "src": "/pqc_algorithms/dilithium.py",
+      "dest": "/pqc_algorithms/dilithium.py"
+    },
+    {
+      "src": "/pqc_algorithms/falcon.py",
+      "dest": "/pqc_algorithms/falcon.py"
+    },
+    {
+      "src": "/pqc_algorithms/saber.py",
+      "dest": "/pqc_algorithms/saber.py"
+    },
+    {
+      "src": "/pqc_algorithms/classic_mceliece.py",
+      "dest": "/pqc_algorithms/classic_mceliece.py"
+    },
+    {
+      "src": "/pqc_algorithms/bike.py",
+      "dest": "/pqc_algorithms/bike.py"
+    },
+    {
+      "src": "/pqc_algorithms/hqc.py",
+      "dest": "/pqc_algorithms/hqc.py"
+    },
+    {
+      "src": "/pqc_algorithms/newhope.py",
+      "dest": "/pqc_algorithms/newhope.py"
+    },
+    {
+      "src": "/pqc_algorithms/frodo.py",
+      "dest": "/pqc_algorithms/frodo.py"
+    },
+    {
+      "src": "/pqc_algorithms/ntru_encrypt.py",
+      "dest": "/pqc_algorithms/ntru_encrypt.py"
+    },
+    {
+      "src": "/pqc_algorithms/ntruprime.py",
+      "dest": "/pqc_algorithms/ntruprime.py"
+    },
+    {
+      "src": "/pqc_algorithms/rainbow.py",
+      "dest": "/pqc_algorithms/rainbow.py"
+    },
+    {
+      "src": "/pqc_algorithms/sphincsplus.py",
+      "dest": "/pqc_algorithms/sphincsplus.py"
+    },
+    {
+      "src": "/pqc_algorithms/csidh.py",
+      "dest": "/pqc_algorithms/csidh.py"
+    },
+    {
+      "src": "/pqc_algorithms/picnic.py",
+      "dest": "/pqc_algorithms/picnic.py"
+    },
+    {
+      "src": "/pqc_algorithms/xmss.py",
+      "dest": "/pqc_algorithms/xmss.py"
+    },
+    {
+      "src": "/pqc_algorithms/quartz.py",
+      "dest": "/pqc_algorithms/quartz.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/app.py"
+    }
+  ]
+}

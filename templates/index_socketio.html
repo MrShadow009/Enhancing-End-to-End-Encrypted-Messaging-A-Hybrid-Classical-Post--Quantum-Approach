@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SpaceChat — Multi-screen Chat</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <h1>SpaceChat</h1>
+        <small>Premium • Encrypted Rooms</small>
+      </div>
+      <div class="actions">
+        <button id="createRoomBtn" class="btn primary">Create Room</button>
+        <button id="joinRoomBtn" class="btn ghost">Join Room</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="search"><input id="searchRooms" placeholder="Search rooms..."/></div>
+        <div id="currentRoomDisplay" class="current-room"></div>
+        <div id="roomsList" class="rooms"></div>
+      </aside>
+
+      <section class="chatpane">
+        <div class="roomHeader" id="roomHeader"><span id="roomTitle">Select or create a room to begin</span><button id="leaveRoomBtn" class="btn leave" style="display:none;">Leave Room</button></div>
+        <div class="messages" id="messages"></div>
+        <div class="composer">
+          <input id="msgInput" placeholder="Say something..." />
+          <button id="sendBtn" class="btn">Send</button>
+        </div>
+      </section>
+
+      <aside class="rightpanel">
+        <div class="card" id="roomInfo">Room Info</div>
+        <div class="card">
+          <h4>Participants</h4>
+          <ul id="participantsList"></ul>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Create Room Modal -->
+    <div id="createModal" class="modal">
+      <div class="modalCard">
+        <h2>Create Room</h2>
+        <input id="roomName" placeholder="Room name" />
+        <textarea id="roomDescription" placeholder="Room description (optional)" rows="3"></textarea>
+        <select id="algorithm">
+          <option value="RANDOM">🎲 RANDOM (Unpredictable Algorithm Selection)</option>
+          <option value="DES">DES (Data Encryption Standard)</option>
+          <option value="ElGamal">ElGamal (Asymmetric Encryption)</option>
+          <option value="RSA">RSA (Rivest–Shamir–Adleman)</option>
+          <option value="Kyber">Kyber (Post-Quantum KEM)</option>
+          <option value="Dilithium">Dilithium (Post-Quantum Signature)</option>
+          <option value="Falcon">Falcon (Post-Quantum Signature)</option>
+          <option value="SABER">SABER (Post-Quantum KEM)</option>
+          <option value="NewHope">NewHope (Post-Quantum KEM)</option>
+          <option value="FrodoKEM">FrodoKEM (Post-Quantum KEM)</option>
+          <option value="NTRUEncrypt">NTRUEncrypt (Post-Quantum Encryption)</option>
+          <option value="NTRUPrime">NTRUPrime (Post-Quantum KEM)</option>
+          <option value="Classic McEliece">Classic McEliece (Post-Quantum KEM)</option>
+          <option value="BIKE">BIKE (Post-Quantum KEM)</option>
+          <option value="HQC">HQC (Post-Quantum KEM)</option>
+          <option value="Rainbow">Rainbow (Post-Quantum Signature)</option>
+          <option value="SPHINCS+">SPHINCS+ (Post-Quantum Signature)</option>
+          <option value="CSIDH">CSIDH (Post-Quantum Key Exchange)</option>
+          <option value="Picnic">Picnic (Post-Quantum Signature)</option>
+          <option value="XMSS">XMSS (Post-Quantum Hash-Based)</option>
+          <option value="QUARTZ">QUARTZ (Post-Quantum Multivariate)</option>
+          <option value="SIKE">SIKE (Post-Quantum Isogeny-Based)</option>
+        </select>
+        <input id="passphrase" placeholder="Room passphrase" />
+        <button id="createSubmit" class="btn primary">Create</button>
+        <button id="createClose" class="btn ghost">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Join Room Modal -->
+    <div id="joinModal" class="modal">
+      <div class="modalCard">
+        <h2>Join Room</h2>
+        <input id="joinRoomId" placeholder="Room ID" />
+        <input id="joinPass" placeholder="Passphrase" />
+        <input id="joinName" placeholder="Your name" />
+        <button id="joinSubmit" class="btn primary">Join</button>
+        <button id="joinClose" class="btn ghost">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+<script src="/static/js/socket_main.js"></script>
+</body>
+</html>
